@@ -15,8 +15,6 @@ public class TestingMain {
             System.out.println("Error!");
         }
 
-
-
         if (Calculator.addCalc(7,3) == 10) {
             System.out.println("Add test OK");
         } else {
