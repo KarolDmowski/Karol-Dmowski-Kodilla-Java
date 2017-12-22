@@ -1,4 +1,4 @@
-package com.kodilla.testing.forum;
+package com.kodilla.testing.calculator;
 
 import com.kodilla.testing.calculator.Calculator;
 import org.junit.Test;
@@ -16,7 +16,7 @@ public class CalculatorTestSuite {
     }
 
     @Test
-    public void  testCaseLalculatorSubstract(){
+    public void  testCaseCalculatorSubstract(){
         //Given == Arrange
         int number = 20;
         //When == Act
