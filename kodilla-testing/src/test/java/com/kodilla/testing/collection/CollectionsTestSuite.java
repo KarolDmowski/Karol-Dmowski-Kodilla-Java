@@ -20,7 +20,7 @@ public class CollectionsTestSuite {
     }
     @AfterClass
     public static void afterClass(){
-        System.out.println("Test Suit: end");
+        System.out.println("Test Suite: end");
     }
     @Test
     public void testCaseEmptyArrayList(){
@@ -30,27 +30,19 @@ public class CollectionsTestSuite {
         ArrayList<Integer> arrayList = new OddNumbersExterminator().exterminate(emptyArrayList);
         System.out.println("Testing exterminate on empty ArrayList");
         //Then == Assert
-        Assert.assertEquals(arrayList ,emptyArrayList);
+        Assert.assertEquals(arrayList, emptyArrayList);
     }
     @Test
     public void testCaseArrayList(){
         //Given == Arrange
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
-        arrayList.add(1);
         arrayList.add(2);
-        arrayList.add(3);
         arrayList.add(4);
-        arrayList.add(5);
         //When ==Act
-        ArrayList<Integer> evenArrayList = new OddNumbersExterminator().exterminate(arrayList);
-        boolean isEvenFlag = true;
-        for(int number : evenArrayList){
-            if(number%2 != 0){
-                isEvenFlag = false;
-            }
-        }
+        ArrayList<Integer> resultArrayList = new OddNumbersExterminator().exterminate(arrayList);
+
         System.out.println("Testing exterminate");
         //Then == Assert
-        Assert.assertEquals(true,isEvenFlag);
+        Assert.assertEquals(resultArrayList,arrayList);
     }
 }
