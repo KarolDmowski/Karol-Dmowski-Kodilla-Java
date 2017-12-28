@@ -14,11 +14,11 @@ public class ShapeCollector {
         return shapeArrayList;
     }
 
-    void addFigure(Shape shape){
+    public void addFigure(Shape shape){
         this.getShapeArrayList().add(shape);
     }
 
-    boolean removeFigure(Shape shape){
+    public boolean removeFigure(Shape shape){
         boolean result = false;
         if(this.getShapeArrayList().contains(shape)){
             this.getShapeArrayList().remove(shape);
@@ -27,7 +27,7 @@ public class ShapeCollector {
         return result;
     };
 
-    Shape getFigure(int n){
+    public Shape getFigure(int n){
         Shape shape = null;
         if(n >= 0 && n < getShapeArrayList().size()){
             shape = getShapeArrayList().get(n);
@@ -35,12 +35,11 @@ public class ShapeCollector {
         return shape;
     };
 
-    ArrayList<Shape> showFigures(){
+    public void showFigures(){
         Iterator<Shape> iteratorArrayList = getShapeArrayList().iterator();
         while(iteratorArrayList.hasNext()){
             Shape currentShape = iteratorArrayList.next();
             System.out.print("Name: " + currentShape.getShapeName() + ", field: " + currentShape.getField() + "\n");
         }
-        return getShapeArrayList();
     }
 }
