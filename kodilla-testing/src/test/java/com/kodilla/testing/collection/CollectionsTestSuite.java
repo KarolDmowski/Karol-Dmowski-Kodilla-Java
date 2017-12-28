@@ -1,9 +1,8 @@
 package com.kodilla.testing.collection;
 
-import java.util.*;
-import java.lang.*;
 import org.junit.*;
-import com.kodilla.testing.collection.OddNumbersExterminator;
+
+import java.util.ArrayList;
 
 public class CollectionsTestSuite {
     @Before
@@ -40,7 +39,6 @@ public class CollectionsTestSuite {
         arrayList.add(4);
         //When ==Act
         ArrayList<Integer> resultArrayList = new OddNumbersExterminator().exterminate(arrayList);
-
         System.out.println("Testing exterminate");
         //Then == Assert
         Assert.assertEquals(resultArrayList,arrayList);

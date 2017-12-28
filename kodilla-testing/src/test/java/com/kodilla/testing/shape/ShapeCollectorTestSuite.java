@@ -1,12 +1,10 @@
 package com.kodilla.testing.shape;
 
 import org.junit.*;
-
+import java.lang.*;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
-
-public abstract class ShapeCollectorTestSuite {
+public class ShapeCollectorTestSuite {
     private static int testCounter = 0;
 
     @BeforeClass
@@ -27,18 +25,20 @@ public abstract class ShapeCollectorTestSuite {
 
     @Test
     public void testAddFigure() {
+        System.out.println("testAddFigure");
         //Given == Arrange
         ShapeCollector shapeCollector = new ShapeCollector();
         Triangle triangle = new Triangle(1, 2);
         //Then == Assert
         shapeCollector.addFigure(triangle);
         //When == Add
-        assertEquals(1, shapeCollector.getShapeArrayList().size());
+        Assert.assertEquals(1, shapeCollector.getShapeArrayList().size());
     }
 
     //dla przecwiczenia
     @Test
     public void testRemoveFigureNotExisting() {
+        System.out.println("testRemoveFigureNotExisting");
         //Given == Arrange
         ShapeCollector shapeCollector = new ShapeCollector();
         Circle circle = new Circle(2);
@@ -50,6 +50,7 @@ public abstract class ShapeCollectorTestSuite {
 
     @Test
     public void testRemoveFigure() {
+        System.out.println("testRemoveFigure");
         //Given == Arrange
         ShapeCollector shapeCollector = new ShapeCollector();
         Circle circle = new Circle(2);
@@ -60,8 +61,10 @@ public abstract class ShapeCollectorTestSuite {
         Assert.assertTrue(result);
         Assert.assertEquals(0,shapeCollector.getShapeArrayList().size());
     }
+
     @Test
     public void  testGetFigure() {
+        System.out.println("testGetFigure");
         //Given == Arrange
         ShapeCollector shapeCollector = new ShapeCollector();
         Square square = new Square(2);
@@ -71,8 +74,10 @@ public abstract class ShapeCollectorTestSuite {
         //Then == Assert
         Assert.assertEquals(square, retrieveSquare);
     }
+
     @Test
     public void testShowFigures() {
+        System.out.println("testShowFigures");
         //Given == Arrange
         ShapeCollector shapeCollector = new ShapeCollector();
         Square square = new Square(2);
