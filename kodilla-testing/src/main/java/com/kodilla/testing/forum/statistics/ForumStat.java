@@ -4,10 +4,10 @@ public class ForumStat  {
     Statistics statistics;
     private int userCount;
     private int postCount;
-    private int comentCount;
+    private int commentCount;
     private double postToUserAvg;
-    private double comentToUserAvg;
-    private double komentToPostAvg;
+    private double commentToUserAvg;
+    private double commentToPostAvg;
 
     public ForumStat(Statistics statistics) {
         this.statistics = statistics;
@@ -21,23 +21,47 @@ public class ForumStat  {
         return postCount;
     }
 
-    public int getComentCount() {
-        return comentCount;
+    public int getCommentCount() {
+        return commentCount;
     }
 
     public double getPostToUserAvg() {
         return postToUserAvg;
     }
 
-    public double getComentToUserAvg() {
-        return comentToUserAvg;
+    public double getCommentToUserAvg() {
+        return commentToUserAvg;
     }
 
-    public double getKomentToPostAvg() {
-        return komentToPostAvg;
+    public double getCommentToPostAvg() {
+        return commentToPostAvg;
     }
 
     public ForumStat calculateAdvStatistics(Statistics statistics){
+        if (statistics.usersNames().size() == 0){
+            userCount = 0;
+            postCount = 0;
+            commentCount = 0;
+            postToUserAvg = 0;
+            commentToPostAvg = 0;
+            commentToPostAvg = 0;
+            System.out.println("Data Error with none users off Forum and existing posts or comments");
+            return this;
+        }
+        if (statistics.postsCount() == 0 && statistics.commentsCount() > 0){
+            System.out.println("Data Error with none posts and existing comments");
+            return this;
+        }
+        userCount = statistics.usersNames().size();
+        postCount = statistics.postsCount();
+        commentCount = statistics.commentsCount();
+        postToUserAvg = postCount/userCount;
+        commentToUserAvg = commentCount /userCount;
+        if(postCount == 0){
+            commentToPostAvg = 0;
+        } else {
+            commentToPostAvg = commentCount / postCount;
+        }
         return this;
     }
 

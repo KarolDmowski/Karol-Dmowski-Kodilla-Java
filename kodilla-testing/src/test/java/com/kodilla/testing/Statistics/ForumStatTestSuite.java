@@ -29,7 +29,7 @@ public class ForumStatTestSuite {
         ArrayList<String> userNames = new ArrayList<String>();
         int numberOfUsers =1;
         for(int i = 0; i < numberOfUsers; i++){
-            userNames.add("User" + i);
+            userNames.add("User" + 1 + i);
         }
         int post = 0;
         int comment =0;
@@ -50,7 +50,7 @@ public class ForumStatTestSuite {
         ArrayList<String> userNames = new ArrayList<String>();
         int numberOfUsers =1;
         for(int i = 0; i < numberOfUsers; i++){
-            userNames.add("User" + i);
+            userNames.add("User" + 1 + i);
         }
         int post = 1000;
         int comment =0;
@@ -70,7 +70,7 @@ public class ForumStatTestSuite {
         ArrayList<String> userNames = new ArrayList<String>();
         int numberOfUsers =1;
         for(int i = 0; i < numberOfUsers; i++){
-            userNames.add("User" + i);
+            userNames.add("User" + 1 + i);
         }
         int post = 1;
         int comment =0;
@@ -79,7 +79,7 @@ public class ForumStatTestSuite {
         when(statisticsMock.commentsCount()).thenReturn(comment);
         ForumStat forumStat = new ForumStat(statisticsMock);
         //When
-        int quantityOfComments = forumStat.calculateAdvStatistics(statisticsMock).getComentCount();
+        int quantityOfComments = forumStat.calculateAdvStatistics(statisticsMock).getCommentCount();
         //Then
         Assert.assertEquals(0,quantityOfComments);
     }
@@ -91,19 +91,19 @@ public class ForumStatTestSuite {
         ArrayList<String> userNames = new ArrayList<String>();
         int numberOfUsers =1;
         for(int i = 0; i < numberOfUsers; i++){
-            userNames.add("User" + i);
+            userNames.add("User" + 1 + i);
         }
-        int post = 2;
-        int comment =1;
+        int post = 1;
+        int comment =0;
         when(statisticsMock.usersNames()).thenReturn(userNames);
         when(statisticsMock.postsCount()).thenReturn(post);
         when(statisticsMock.commentsCount()).thenReturn(comment);
         ForumStat forumStat = new ForumStat(statisticsMock);
         //When
-        int ratioOfCommentsToPosts = forumStat.calculateAdvStatistics(statisticsMock).getComentCount()
+        double ratioOfCommentsToPosts = forumStat.calculateAdvStatistics(statisticsMock).getCommentCount()
                 / forumStat.calculateAdvStatistics(statisticsMock).getPostCount();
         //Then
-        Assert.assertEquals(2/1,ratioOfCommentsToPosts);
+        Assert.assertEquals(0,ratioOfCommentsToPosts,0);
     }
 
     @Test
@@ -113,7 +113,7 @@ public class ForumStatTestSuite {
         ArrayList<String> userNames = new ArrayList<String>();
         int numberOfUsers =1;
         for(int i = 0; i < numberOfUsers; i++){
-            userNames.add("User" + i);
+            userNames.add("User" + 1 + i);
         }
         int post = 1;
         int comment =2;
@@ -122,10 +122,10 @@ public class ForumStatTestSuite {
         when(statisticsMock.commentsCount()).thenReturn(comment);
         ForumStat forumStat = new ForumStat(statisticsMock);
         //When
-        int ratioOfCommentsToPosts = forumStat.calculateAdvStatistics(statisticsMock).getComentCount()
+        int ratioOfCommentsToPosts = forumStat.calculateAdvStatistics(statisticsMock).getCommentCount()
                 / forumStat.calculateAdvStatistics(statisticsMock).getPostCount();
         //Then
-        Assert.assertEquals(1/2,ratioOfCommentsToPosts);
+        Assert.assertEquals(2,ratioOfCommentsToPosts);
     }
 
     @Test
@@ -135,7 +135,7 @@ public class ForumStatTestSuite {
         ArrayList<String> userNames = new ArrayList<String>();
         int numberOfUsers =0;
         for(int i = 0; i < numberOfUsers; i++){
-            userNames.add("User" + i);
+            userNames.add("User" + 1 + i);
         }
         int post = 0;
         int comment =0;
@@ -156,7 +156,7 @@ public class ForumStatTestSuite {
         ArrayList<String> userNames = new ArrayList<String>();
         int numberOfUsers =1000;
         for(int i = 0; i < numberOfUsers; i++){
-            userNames.add("User" + i);
+            userNames.add("User" + 1 + i);
         }
         int post = 0;
         int comment =0;
