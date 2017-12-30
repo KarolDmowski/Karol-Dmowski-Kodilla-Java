@@ -1,7 +1,7 @@
 package com.kodilla.testing.forum.statistics;
 
 public class ForumStat  {
-    Statistics statistics;
+    private Statistics statistics;
     private int userCount;
     private int postCount;
     private int commentCount;
@@ -50,18 +50,19 @@ public class ForumStat  {
         postCount = statistics.postsCount();
         commentCount = statistics.commentsCount();
         postToUserAvg = postCount/userCount;
-        commentToUserAvg = commentCount /userCount;
-        if(postCount == 0){
-            commentToPostAvg = 0;
-        } else {
-            commentToPostAvg = commentCount / postCount;
+        commentToUserAvg = commentCount/userCount;
+        if(postCount != 0){
+            commentToPostAvg = commentCount/postCount;
         }
         return this;
     }
 
     public void showStatistics(){
-    System.out.println("Number of users: " + this.statistics.usersNames().size()
-            + "\nNumber of posts: " + this.statistics.postsCount()
-            + "\nNumber of comments: " + this.statistics.commentsCount());
+    System.out.println("Number of users: " + statistics.usersNames().size()
+            + "; Number of posts: " + statistics.postsCount()
+            + "; Number of comments: " + statistics.commentsCount()
+            + "\nRatio post to user: " + getPostToUserAvg()
+            + "; Ratio comment to user: " + getCommentToUserAvg()
+            + "; Ratio comment to post: " + getCommentToPostAvg());
     }
 }
