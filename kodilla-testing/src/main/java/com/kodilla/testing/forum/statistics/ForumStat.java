@@ -45,7 +45,7 @@ public class ForumStat  {
             postToUserAvg = 0;
             commentToPostAvg = 0;
             commentToPostAvg = 0;
-            System.out.println("Data Error with none users off Forum and existing posts or comments");
+            System.out.println("Data Error with none users of Forum and existing posts or comments");
             return this;
         }
         if (statistics.postsCount() == 0 && statistics.commentsCount() > 0){
@@ -65,7 +65,9 @@ public class ForumStat  {
         return this;
     }
 
-    public void ShowStatistics(){
-
+    public void showStatistics(){
+    System.out.println("Number of users: " + this.statistics.usersNames().size()
+            + "\nNumber of posts: " + this.statistics.postsCount()
+            + "\nNumber of comments: " + this.statistics.commentsCount());
     }
 }

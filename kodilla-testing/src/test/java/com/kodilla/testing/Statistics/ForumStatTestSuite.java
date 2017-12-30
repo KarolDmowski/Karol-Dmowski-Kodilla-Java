@@ -2,16 +2,15 @@ package com.kodilla.testing.Statistics;
 
 import com.kodilla.testing.forum.statistics.Statistics;
 import com.kodilla.testing.forum.statistics.ForumStat;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 
 import java.util.*;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 public class ForumStatTestSuite {
+    private static int testCounter = 0;
+
     @BeforeClass
     public static void beforeAllTests() {
         System.out.println("Lets start all tests");
@@ -20,6 +19,11 @@ public class ForumStatTestSuite {
     @AfterClass
     public static void afterAllTests() {
         System.out.println("All tests ended");
+    }
+    @Before
+    public void beforeEveryTest(){
+        testCounter++;
+        System.out.println("Test #" + testCounter);
     }
 
     @Test
@@ -37,6 +41,7 @@ public class ForumStatTestSuite {
         when(statisticsMock.postsCount()).thenReturn(post);
         when(statisticsMock.commentsCount()).thenReturn(comment);
         ForumStat forumStat = new ForumStat(statisticsMock);
+        forumStat.showStatistics();
         //When
         int quantityOfPosts = forumStat.calculateAdvStatistics(statisticsMock).getPostCount();
         //Then
@@ -58,6 +63,7 @@ public class ForumStatTestSuite {
         when(statisticsMock.postsCount()).thenReturn(post);
         when(statisticsMock.commentsCount()).thenReturn(comment);
         ForumStat forumStat = new ForumStat(statisticsMock);
+        forumStat.showStatistics();
         //When
         int quantityOfPosts = forumStat.calculateAdvStatistics(statisticsMock).getPostCount();
         //Then
@@ -78,6 +84,7 @@ public class ForumStatTestSuite {
         when(statisticsMock.postsCount()).thenReturn(post);
         when(statisticsMock.commentsCount()).thenReturn(comment);
         ForumStat forumStat = new ForumStat(statisticsMock);
+        forumStat.showStatistics();
         //When
         int quantityOfComments = forumStat.calculateAdvStatistics(statisticsMock).getCommentCount();
         //Then
@@ -99,11 +106,11 @@ public class ForumStatTestSuite {
         when(statisticsMock.postsCount()).thenReturn(post);
         when(statisticsMock.commentsCount()).thenReturn(comment);
         ForumStat forumStat = new ForumStat(statisticsMock);
+        forumStat.showStatistics();
         //When
-        double ratioOfCommentsToPosts = forumStat.calculateAdvStatistics(statisticsMock).getCommentCount()
-                / forumStat.calculateAdvStatistics(statisticsMock).getPostCount();
+        int quantityOfPosts = forumStat.calculateAdvStatistics(statisticsMock).getPostCount();
         //Then
-        Assert.assertEquals(0,ratioOfCommentsToPosts,0);
+        Assert.assertEquals(1,quantityOfPosts);
     }
 
     @Test
@@ -121,11 +128,11 @@ public class ForumStatTestSuite {
         when(statisticsMock.postsCount()).thenReturn(post);
         when(statisticsMock.commentsCount()).thenReturn(comment);
         ForumStat forumStat = new ForumStat(statisticsMock);
+        forumStat.showStatistics();
         //When
-        int ratioOfCommentsToPosts = forumStat.calculateAdvStatistics(statisticsMock).getCommentCount()
-                / forumStat.calculateAdvStatistics(statisticsMock).getPostCount();
+        int quantityOfPosts = forumStat.calculateAdvStatistics(statisticsMock).getPostCount();
         //Then
-        Assert.assertEquals(2,ratioOfCommentsToPosts);
+        Assert.assertEquals(1,quantityOfPosts);
     }
 
     @Test
@@ -143,6 +150,7 @@ public class ForumStatTestSuite {
         when(statisticsMock.postsCount()).thenReturn(post);
         when(statisticsMock.commentsCount()).thenReturn(comment);
         ForumStat forumStat = new ForumStat(statisticsMock);
+        forumStat.showStatistics();
         //When
         int quantityOfUsers = forumStat.calculateAdvStatistics(statisticsMock).getUserCount();
         //Then
@@ -164,6 +172,7 @@ public class ForumStatTestSuite {
         when(statisticsMock.postsCount()).thenReturn(post);
         when(statisticsMock.commentsCount()).thenReturn(comment);
         ForumStat forumStat = new ForumStat(statisticsMock);
+        forumStat.showStatistics();
         //When
         int quantityOfUsers = forumStat.calculateAdvStatistics(statisticsMock).getUserCount();
         //Then
