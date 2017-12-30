@@ -39,12 +39,6 @@ public class ForumStat  {
 
     public ForumStat calculateAdvStatistics(Statistics statistics){
         if (statistics.usersNames().size() == 0){
-            userCount = 0;
-            postCount = 0;
-            commentCount = 0;
-            postToUserAvg = 0;
-            commentToPostAvg = 0;
-            commentToPostAvg = 0;
             System.out.println("Data Error with none users of Forum and existing posts or comments");
             return this;
         }
