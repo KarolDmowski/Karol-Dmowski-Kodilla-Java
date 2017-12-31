@@ -1,28 +1,28 @@
 package com.kodilla.testing.calculator;
 
 import com.kodilla.testing.calculator.Calculator;
-import org.junit.Test;
 import org.junit.Assert;
+import org.junit.Test;
 
 public class CalculatorTestSuite {
     @Test
-    public void testCaseCalculatorAdd(){
+    public void testCaseCalculatorAdd() {
         //Given == Arrange
         int number = 30;
         //When == Act
-        int addResult = Calculator.addCalc(10,20);
+        int addResult = Calculator.addCalc(10, 20);
         //Then == Assert
-        Assert.assertEquals(number,addResult);
+        Assert.assertEquals(number, addResult);
     }
 
     @Test
-    public void  testCaseCalculatorSubstract(){
+    public void testCaseCalculatorSubstract() {
         //Given == Arrange
         int number = 20;
         //When == Act
-        int substractResult = Calculator.substractCalc(25,5);
+        int substractResult = Calculator.substractCalc(25, 5);
         //Then == Assert
-        Assert.assertEquals(number,substractResult);
+        Assert.assertEquals(number, substractResult);
     }
 
 }

@@ -57,11 +57,11 @@ public class ShapeCollectorTestSuite {
         boolean result = shapeCollector.removeFigure(circle);
         //Then == Assert
         Assert.assertTrue(result);
-        Assert.assertEquals(0,shapeCollector.getShapeArrayList().size());
+        Assert.assertEquals(0, shapeCollector.getShapeArrayList().size());
     }
 
     @Test
-    public void  testGetFigure() {
+    public void testGetFigure() {
         System.out.println("testGetFigure");
         //Given == Arrange
         ShapeCollector shapeCollector = new ShapeCollector();
@@ -85,6 +85,6 @@ public class ShapeCollectorTestSuite {
         Shape retriveShape = shapeCollector.getFigure(0);
 
         //Then == Assert
-        Assert.assertEquals(square,retriveShape);
+        Assert.assertEquals(square, retriveShape);
     }
 }

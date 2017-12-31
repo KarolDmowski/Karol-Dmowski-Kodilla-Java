@@ -1,14 +1,12 @@
 package com.kodilla.testing.shape;
 
-import java.lang.*;
-
 public class Square implements Shape {
     private String shapeName;
     private double field;
 
     public Square(double length) {
         this.shapeName = "Square";
-        this.field = Math.pow(length,2);
+        this.field = Math.pow(length, 2);
     }
 
     @Override

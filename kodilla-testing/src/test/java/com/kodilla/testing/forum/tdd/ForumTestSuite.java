@@ -1,6 +1,5 @@
 package com.kodilla.testing.forum.tdd;
 
-import com.kodilla.testing.forum.*;
 import org.junit.*;
 
 public class ForumTestSuite {
@@ -21,15 +20,17 @@ public class ForumTestSuite {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
+
     @Test
-    public void testAddpost(){
+    public void testAddpost() {
         //Given == Arrange
         ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
         //When == Add
-        forumUser.addPost("mrsmith","Hello every one,this is my first contribution here!");
+        forumUser.addPost("mrsmith", "Hello every one,this is my first contribution here!");
         //Then == Assert
         Assert.assertEquals(1, forumUser.getPostsQuantity());
     }
+
     @Test
     public void testAddComment() {
         //Given == Arrange
@@ -43,6 +44,7 @@ public class ForumTestSuite {
         //Then == Assert
         Assert.assertEquals(1, forumUser.getCommentsQuantity());
     }
+
     @Test
     public void testGetPost() {
         //Given == Arrange
@@ -58,6 +60,7 @@ public class ForumTestSuite {
         //Then == Assert
         Assert.assertEquals(thePost, retrievedPost);
     }
+
     @Test
     public void testGetComment() {
         //Given == Arrange
@@ -73,6 +76,7 @@ public class ForumTestSuite {
         //Then == Assert
         Assert.assertEquals(theComment, retrievedComment);
     }
+
     @Test
     public void testRemovePostNotExisting() {
         //Given == Arrange
@@ -84,6 +88,7 @@ public class ForumTestSuite {
         //Then == Assert
         Assert.assertFalse(result);
     }
+
     @Test
     public void testRemoveCommentNotExisting() {
         //Given == Arrange
@@ -97,6 +102,7 @@ public class ForumTestSuite {
         //Then == Assert
         Assert.assertFalse(result);
     }
+
     @Test
     public void testRemovePost() {
         //Given == Arrange
@@ -112,6 +118,7 @@ public class ForumTestSuite {
         Assert.assertTrue(result);
         Assert.assertEquals(0, forumUser.getPostsQuantity());
     }
+
     @Test
     public void testRemoveComment() {
         //Given == Arrenge

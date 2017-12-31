@@ -13,7 +13,7 @@ public class SimpleUser {
         return realName;
     }
 
-    public String getUsername(){
+    public String getUsername() {
         return username;
     }
 }

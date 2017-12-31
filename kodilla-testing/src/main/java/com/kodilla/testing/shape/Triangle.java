@@ -7,7 +7,7 @@ public class Triangle implements Shape {
 
     public Triangle(double length, double height) {
         this.shapeName = "Triangle";
-        this.field = length*height/2;
+        this.field = length * height / 2;
     }
 
     @Override

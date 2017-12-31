@@ -2,16 +2,18 @@ package com.kodilla.testing.library;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
+
 public class BookDirectoryTestSuite {
 
     private List<Book> generateListOfNBooks(int booksQuantity) {
         List<Book> resultList = new ArrayList<Book>();
-        for(int n = 1; n <= booksQuantity; n++){
+        for (int n = 1; n <= booksQuantity; n++) {
             Book theBook = new Book("Title " + n, "Author " + n, 1970 + n);
             resultList.add(theBook);
         }
@@ -64,8 +66,9 @@ public class BookDirectoryTestSuite {
         assertEquals(15, theListOfBooks15.size());
         assertEquals(0, theListOfBooks40.size());
     }
+
     @Test
-    public void testListBooksWithConditionFragmentShorterThan3(){
+    public void testListBooksWithConditionFragmentShorterThan3() {
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
@@ -77,19 +80,19 @@ public class BookDirectoryTestSuite {
         List<Book> theListOfBooks10 = bookLibrary.listBooksWithCondition("An");
 
         //Then
-            assertEquals(0, theListOfBooks10.size());
-            verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
+        assertEquals(0, theListOfBooks10.size());
+        verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
     //List<Book> listBooksInHandsOf(LibraryUser libraryUser)
 
     @Test
-    public void testListBooksInHandsOf0Rented(){
+    public void testListBooksInHandsOf0Rented() {
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-        LibraryUser user0 = new LibraryUser("user", "zero","0000");
-        LibraryUser user1 = new LibraryUser("user", "one","0001");
-        LibraryUser user5 = new LibraryUser("user", "five","0005");
+        LibraryUser user0 = new LibraryUser("user", "zero", "0000");
+        LibraryUser user1 = new LibraryUser("user", "one", "0001");
+        LibraryUser user5 = new LibraryUser("user", "five", "0005");
         List<Book> returnListOf0RentedBooks = generateListOfNBooks(0);
         List<Book> returnListOf1RentedBooks = generateListOfNBooks(1);
         List<Book> returnListOf5RentedBooks = generateListOfNBooks(5);
@@ -106,18 +109,19 @@ public class BookDirectoryTestSuite {
         List<Book> listOf5RentedBooks = bookLibrary.listBooksInHandsOf(user5);
 
         //Then
-        assertEquals(0,listOf0RentedBooks.size());
+        assertEquals(0, listOf0RentedBooks.size());
         //assertEquals(1,listOf1RentedBooks.size());
         //assertEquals(5,listOf5RentedBooks.size());
     }
+
     @Test
-    public void testListBooksInHandsOf1Rented(){
+    public void testListBooksInHandsOf1Rented() {
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-        LibraryUser user0 = new LibraryUser("user", "zero","0000");
-        LibraryUser user1 = new LibraryUser("user", "one","0001");
-        LibraryUser user5 = new LibraryUser("user", "five","0005");
+        LibraryUser user0 = new LibraryUser("user", "zero", "0000");
+        LibraryUser user1 = new LibraryUser("user", "one", "0001");
+        LibraryUser user5 = new LibraryUser("user", "five", "0005");
         List<Book> returnListOf0RentedBooks = generateListOfNBooks(0);
         List<Book> returnListOf1RentedBooks = generateListOfNBooks(1);
         List<Book> returnListOf5RentedBooks = generateListOfNBooks(5);
@@ -134,8 +138,8 @@ public class BookDirectoryTestSuite {
         List<Book> listOf5RentedBooks = bookLibrary.listBooksInHandsOf(user5);
 
         //Then
-        assertEquals(0,listOf0RentedBooks.size());
-        assertEquals(1,listOf1RentedBooks.size());
-        assertEquals(5,listOf5RentedBooks.size());
+        assertEquals(0, listOf0RentedBooks.size());
+        assertEquals(1, listOf1RentedBooks.size());
+        assertEquals(5, listOf5RentedBooks.size());
     }
 }

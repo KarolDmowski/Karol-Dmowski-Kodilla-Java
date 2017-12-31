@@ -5,24 +5,28 @@ import org.junit.*;
 import java.util.ArrayList;
 
 public class CollectionsTestSuite {
-    @Before
-    public void before(){
-        System.out.println("Test Case: begin");
-    }
-    @After
-    public void after(){
-        System.out.println("Test Case: end");
-    }
     @BeforeClass
-    public static void beforeClass(){
+    public static void beforeClass() {
         System.out.println("Test Suite: begin");
     }
+
     @AfterClass
-    public static void afterClass(){
+    public static void afterClass() {
         System.out.println("Test Suite: end");
     }
+
+    @Before
+    public void before() {
+        System.out.println("Test Case: begin");
+    }
+
+    @After
+    public void after() {
+        System.out.println("Test Case: end");
+    }
+
     @Test
-    public void testCaseEmptyArrayList(){
+    public void testCaseEmptyArrayList() {
         //Given == Arrange
         ArrayList<Integer> emptyArrayList = new ArrayList<Integer>();
         //When == Act
@@ -31,8 +35,9 @@ public class CollectionsTestSuite {
         //Then == Assert
         Assert.assertEquals(arrayList, emptyArrayList);
     }
+
     @Test
-    public void testCaseArrayList(){
+    public void testCaseArrayList() {
         //Given == Arrange
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         arrayList.add(2);
@@ -41,6 +46,6 @@ public class CollectionsTestSuite {
         ArrayList<Integer> resultArrayList = new OddNumbersExterminator().exterminate(arrayList);
         System.out.println("Testing exterminate");
         //Then == Assert
-        Assert.assertEquals(resultArrayList,arrayList);
+        Assert.assertEquals(resultArrayList, arrayList);
     }
 }
