@@ -1,7 +1,7 @@
 package com.kodilla.testing.forum.tdd;
 
 import org.junit.*;
-
+import com.kodilla.testing.forum.*;
 public class ForumTestSuite {
     private static int testCounter = 0;
 
