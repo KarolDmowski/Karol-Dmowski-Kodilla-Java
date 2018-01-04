@@ -47,11 +47,6 @@ public class ForumStat {
         return commentToPostAvg;
     }
 
-    public ForumStat calculateAdvStatistics(Statistics statistics) {
-
-        return this;
-    }
-
     public void showStatistics() {
         System.out.println("Users# " + getUserCount()
                 + "; Posts# " + getPostCount()

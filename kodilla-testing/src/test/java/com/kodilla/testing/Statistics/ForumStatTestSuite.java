@@ -50,14 +50,13 @@ public class ForumStatTestSuite {
         ForumStat forumStat = new ForumStat(statisticsMock);
         forumStat.showStatistics();
         //When
-        ForumStat forumStat1 = forumStat.calculateAdvStatistics(statisticsMock);
-        int quantityOfUsers = forumStat1.getUserCount();
-        int quantityOfPosts = forumStat1.getPostCount();
-        int quantityOfComments = forumStat1.getCommentCount();
-        double ratioPostToUserAvg = forumStat1.getPostToUserAvg();
-        double ratioCommentToUserAvg = forumStat1.getCommentToUserAvg();
-        double ratioCommentToPostAvg = forumStat1.getCommentToPostAvg();
-
+        //ForumStat forumStat1 = forumStat.calculateAdvStatistics(statisticsMock);
+        int quantityOfUsers = forumStat.getUserCount();
+        int quantityOfPosts = forumStat.getPostCount();
+        int quantityOfComments = forumStat.getCommentCount();
+        double ratioPostToUserAvg = forumStat.getPostToUserAvg();
+        double ratioCommentToUserAvg = forumStat.getCommentToUserAvg();
+        double ratioCommentToPostAvg = forumStat.getCommentToPostAvg();
         //Then
         Assert.assertEquals(1, quantityOfUsers);
         Assert.assertEquals(0, quantityOfPosts);
@@ -80,14 +79,12 @@ public class ForumStatTestSuite {
         ForumStat forumStat = new ForumStat(statisticsMock);
         forumStat.showStatistics();
         //When
-        ForumStat forumStat1 = forumStat.calculateAdvStatistics(statisticsMock);
-        int quantityOfUsers = forumStat1.getUserCount();
-        int quantityOfPosts = forumStat1.getPostCount();
-        int quantityOfComments = forumStat1.getCommentCount();
-        double ratioPostToUserAvg = forumStat1.getPostToUserAvg();
-        double ratioCommentToUserAvg = forumStat1.getCommentToUserAvg();
-        double ratioCommentToPostAvg = forumStat1.getCommentToPostAvg();
-
+        int quantityOfUsers = forumStat.getUserCount();
+        int quantityOfPosts = forumStat.getPostCount();
+        int quantityOfComments = forumStat.getCommentCount();
+        double ratioPostToUserAvg = forumStat.getPostToUserAvg();
+        double ratioCommentToUserAvg = forumStat.getCommentToUserAvg();
+        double ratioCommentToPostAvg = forumStat.getCommentToPostAvg();
         //Then
         Assert.assertEquals(1, quantityOfUsers);
         Assert.assertEquals(1000, quantityOfPosts);
@@ -110,14 +107,12 @@ public class ForumStatTestSuite {
         ForumStat forumStat = new ForumStat(statisticsMock);
         forumStat.showStatistics();
         //When
-        ForumStat forumStat1 = forumStat.calculateAdvStatistics(statisticsMock);
-        int quantityOfUsers = forumStat1.getUserCount();
-        int quantityOfPosts = forumStat1.getPostCount();
-        int quantityOfComments = forumStat1.getCommentCount();
-        double ratioPostToUserAvg = forumStat1.getPostToUserAvg();
-        double ratioCommentToUserAvg = forumStat1.getCommentToUserAvg();
-        double ratioCommentToPostAvg = forumStat1.getCommentToPostAvg();
-
+        int quantityOfUsers = forumStat.getUserCount();
+        int quantityOfPosts = forumStat.getPostCount();
+        int quantityOfComments = forumStat.getCommentCount();
+        double ratioPostToUserAvg = forumStat.getPostToUserAvg();
+        double ratioCommentToUserAvg = forumStat.getCommentToUserAvg();
+        double ratioCommentToPostAvg = forumStat.getCommentToPostAvg();
         //Then
         Assert.assertEquals(1, quantityOfUsers);
         Assert.assertEquals(1, quantityOfPosts);
@@ -140,14 +135,12 @@ public class ForumStatTestSuite {
         ForumStat forumStat = new ForumStat(statisticsMock);
         forumStat.showStatistics();
         //When
-        ForumStat forumStat1 = forumStat.calculateAdvStatistics(statisticsMock);
-        int quantityOfUsers = forumStat1.getUserCount();
-        int quantityOfPosts = forumStat1.getPostCount();
-        int quantityOfComments = forumStat1.getCommentCount();
-        double ratioPostToUserAvg = forumStat1.getPostToUserAvg();
-        double ratioCommentToUserAvg = forumStat1.getCommentToUserAvg();
-        double ratioCommentToPostAvg = forumStat1.getCommentToPostAvg();
-
+        int quantityOfUsers = forumStat.getUserCount();
+        int quantityOfPosts = forumStat.getPostCount();
+        int quantityOfComments = forumStat.getCommentCount();
+        double ratioPostToUserAvg = forumStat.getPostToUserAvg();
+        double ratioCommentToUserAvg = forumStat.getCommentToUserAvg();
+        double ratioCommentToPostAvg = forumStat.getCommentToPostAvg();
         //Then
         Assert.assertEquals(1, quantityOfUsers);
         Assert.assertEquals(2, quantityOfPosts);
@@ -170,14 +163,12 @@ public class ForumStatTestSuite {
         ForumStat forumStat = new ForumStat(statisticsMock);
         forumStat.showStatistics();
         //When
-        ForumStat forumStat1 = forumStat.calculateAdvStatistics(statisticsMock);
-        int quantityOfUsers = forumStat1.getUserCount();
-        int quantityOfPosts = forumStat1.getPostCount();
-        int quantityOfComments = forumStat1.getCommentCount();
-        double ratioPostToUserAvg = forumStat1.getPostToUserAvg();
-        double ratioCommentToUserAvg = forumStat1.getCommentToUserAvg();
-        double ratioCommentToPostAvg = forumStat1.getCommentToPostAvg();
-
+        int quantityOfUsers = forumStat.getUserCount();
+        int quantityOfPosts = forumStat.getPostCount();
+        int quantityOfComments = forumStat.getCommentCount();
+        double ratioPostToUserAvg = forumStat.getPostToUserAvg();
+        double ratioCommentToUserAvg = forumStat.getCommentToUserAvg();
+        double ratioCommentToPostAvg = forumStat.getCommentToPostAvg();
         //Then
         Assert.assertEquals(1, quantityOfUsers);
         Assert.assertEquals(1, quantityOfPosts);
@@ -200,14 +191,12 @@ public class ForumStatTestSuite {
         ForumStat forumStat = new ForumStat(statisticsMock);
         forumStat.showStatistics();
         //When
-        ForumStat forumStat1 = forumStat.calculateAdvStatistics(statisticsMock);
-        int quantityOfUsers = forumStat1.getUserCount();
-        int quantityOfPosts = forumStat1.getPostCount();
-        int quantityOfComments = forumStat1.getCommentCount();
-        double ratioPostToUserAvg = forumStat1.getPostToUserAvg();
-        double ratioCommentToUserAvg = forumStat1.getCommentToUserAvg();
-        double ratioCommentToPostAvg = forumStat1.getCommentToPostAvg();
-
+        int quantityOfUsers = forumStat.getUserCount();
+        int quantityOfPosts = forumStat.getPostCount();
+        int quantityOfComments = forumStat.getCommentCount();
+        double ratioPostToUserAvg = forumStat.getPostToUserAvg();
+        double ratioCommentToUserAvg = forumStat.getCommentToUserAvg();
+        double ratioCommentToPostAvg = forumStat.getCommentToPostAvg();
         //Then
         Assert.assertEquals(0, quantityOfUsers);
         Assert.assertEquals(0, quantityOfPosts);
@@ -230,14 +219,12 @@ public class ForumStatTestSuite {
         ForumStat forumStat = new ForumStat(statisticsMock);
         forumStat.showStatistics();
         //When
-        ForumStat forumStat1 = forumStat.calculateAdvStatistics(statisticsMock);
-        int quantityOfUsers = forumStat1.getUserCount();
-        int quantityOfPosts = forumStat1.getPostCount();
-        int quantityOfComments = forumStat1.getCommentCount();
-        double ratioPostToUserAvg = forumStat1.getPostToUserAvg();
-        double ratioCommentToUserAvg = forumStat1.getCommentToUserAvg();
-        double ratioCommentToPostAvg = forumStat1.getCommentToPostAvg();
-
+        int quantityOfUsers = forumStat.getUserCount();
+        int quantityOfPosts = forumStat.getPostCount();
+        int quantityOfComments = forumStat.getCommentCount();
+        double ratioPostToUserAvg = forumStat.getPostToUserAvg();
+        double ratioCommentToUserAvg = forumStat.getCommentToUserAvg();
+        double ratioCommentToPostAvg = forumStat.getCommentToPostAvg();
         //Then
         Assert.assertEquals(1000, quantityOfUsers);
         Assert.assertEquals(0, quantityOfPosts);
