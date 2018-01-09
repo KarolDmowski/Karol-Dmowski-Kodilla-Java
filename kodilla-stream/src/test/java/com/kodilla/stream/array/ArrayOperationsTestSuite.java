@@ -16,6 +16,5 @@ public class ArrayOperationsTestSuite {
         System.out.println(average);
         //The
         Assert.assertEquals(19,average,0);
-
     }
 }
