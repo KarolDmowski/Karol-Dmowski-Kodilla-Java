@@ -1,7 +1,5 @@
 package SolidDryExample;
 
-import java.time.LocalDateTime;
-
 public class RentalProcessor {
 
     private InformationService informationService;
@@ -17,7 +15,7 @@ public class RentalProcessor {
     }
 
     public  RentalDto process(final RentRequest rentRequest) {
-        boolean isRented = rentalService.rent(rentRequest.getUser(), rentRequest.getFrom(), rentRequest.getTo());
+        boolean isRented = true; //rentalService.rent(rentRequest.getUser(), rentRequest.getFrom(), rentRequest.getTo());
         if(isRented) {
             informationService.inform(rentRequest.getUser());
             rentalRepository.createRental(rentRequest.getUser(), rentRequest.getFrom(), rentRequest.getTo());

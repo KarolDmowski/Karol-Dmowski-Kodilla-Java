@@ -2,28 +2,16 @@ package challenges;
 
 public class OrderDto {
 
-    private User user;
-    private Product product;
-    private int productQuantity;
+    private OrderRequest orderRequest;
     private boolean isOrdered;
 
-    public OrderDto(User user, Product product, int productQuantity, boolean isOrdered) {
-        this.user = user;
-        this.product = product;
-        this.productQuantity = productQuantity;
+    public OrderDto(OrderRequest orderRequest, boolean isOrdered) {
+        this.orderRequest = orderRequest;
         this.isOrdered = isOrdered;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public int getProductQuantity() {
-        return productQuantity;
+    public OrderRequest getOrderRequest() {
+        return orderRequest;
     }
 
     public boolean isOrdered() {

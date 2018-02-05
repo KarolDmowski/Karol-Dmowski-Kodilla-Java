@@ -20,9 +20,9 @@ public class OrderProcessor {
         if(isOrdered) {
             informationService.inform(orderRequest.getUser());
             orderRepository.createOrder(orderRequest.getUser(), orderRequest.getProduct(), orderRequest.getQuantity());
-            return new OrderDto(orderRequest.getUser(), orderRequest.getProduct(), orderRequest.getQuantity(), true);
+            return new OrderDto(orderRequest, true);
         } else {
-            return new OrderDto(orderRequest.getUser(), orderRequest.getProduct(), orderRequest.getQuantity(), false);
+            return new OrderDto(orderRequest, false);
         }
     }
 }
