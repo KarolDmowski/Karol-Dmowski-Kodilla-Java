@@ -13,8 +13,6 @@ public class Application {
         Product product = new Product("P1",2);
         orderRequest.addProductToOrderList(product,5.0);
 
-        //productOrderService.createOrder(orderRequest);
-
         OrderProcessor orderProcessor = new OrderProcessor(new MailServices(), productOrderService, new OrderDataBase());
         orderProcessor.process(orderRequest);
     }

@@ -18,9 +18,7 @@ public class OrderProcessor {
         if(isOrdered) {
             informationService.inform();
             orderRepository.createOrder();
-            orderRequest.getSupplier().process(orderRequest);
             return new OrderDto(orderRequest, true);
-
         } else {
             return new OrderDto(orderRequest, false);
         }

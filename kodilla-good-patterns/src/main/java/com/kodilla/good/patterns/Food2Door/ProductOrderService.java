@@ -20,6 +20,7 @@ public class ProductOrderService implements OrderService {
     @Override
     public boolean createOrder(OrderRequest orderRequest ) {
         if (supplierList.contains(orderRequest.getSupplier())) {
+            orderRequest.getSupplier().process(orderRequest);
             return true;
         } else {
             return false;
