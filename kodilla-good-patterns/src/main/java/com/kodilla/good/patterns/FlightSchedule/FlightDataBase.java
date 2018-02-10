@@ -1,27 +1,21 @@
 package com.kodilla.good.patterns.FlightSchedule;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FlightDataBase implements FlightRepository {
-    private static Map<Airport, Flight> flightsCollectionDepartureKey = new HashMap<>();
-    private static Map<Airport, Flight> flightsCollectionArrivalKey = new HashMap<>();
+    private static Set<Flight> flightsCollection = new HashSet<>();
 
-    public static Map<Airport, Flight> getFlightsCollectionDepartureKey() {
-        return flightsCollectionDepartureKey;
-    }
-
-    public static Map<Airport, Flight> getFlightsCollectionArrivalKey() {
-        return flightsCollectionArrivalKey;
+    public static Set<Flight> getFlightsCollection() {
+        return flightsCollection;
     }
 
     @Override
     public boolean addFlightToCollection(Flight flight) {
-        if(flightsCollectionDepartureKey.containsValue(flight)){
+        if(flightsCollection.contains(flight)){
             return false;
         } else {
-            flightsCollectionDepartureKey.put(flight.getStart(), flight);
-            flightsCollectionArrivalKey.put(flight.getEnd(), flight);
+            flightsCollection.add(flight);
             return true;
         }
     }
