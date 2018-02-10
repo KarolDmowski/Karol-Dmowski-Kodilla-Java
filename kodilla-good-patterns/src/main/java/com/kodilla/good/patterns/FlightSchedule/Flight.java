@@ -19,9 +19,6 @@ public final class Flight {
 
     @Override
     public String toString() {
-        return "Flight{" +
-                "start=" + start +
-                ", end=" + end +
-                '}';
+        return "Flight departure - " + start + ". Arrival - " + end + ".";
     }
 }
