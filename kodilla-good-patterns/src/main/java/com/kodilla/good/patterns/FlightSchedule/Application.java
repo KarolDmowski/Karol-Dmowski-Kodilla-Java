@@ -1,5 +1,6 @@
 package com.kodilla.good.patterns.FlightSchedule;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
@@ -25,7 +26,8 @@ public class Application {
 
         flightList = finder.findFlightsToEnd(new Airport("d"));
         flightList.stream().forEach(System.out::println);
-
-        finder.findFlightWithTransfer(new Airport("b"), new Airport("c"));
+        List<FlightsWithTransfer> flightListWithTransfer = new ArrayList<>();
+        flightListWithTransfer = finder.findFlightWithTransfer(new Airport("b"), new Airport("c"));
+        flightListWithTransfer.stream().forEach(System.out::println);
     }
 }

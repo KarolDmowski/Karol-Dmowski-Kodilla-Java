@@ -1,5 +1,6 @@
 package com.kodilla.good.patterns.FlightSchedule;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,17 +18,19 @@ public class FlightFinderService {
                 .collect(Collectors.toList());
     }
 
-    public void findFlightWithTransfer(Airport departureAirport, Airport arrivalAirport){
+    public List<FlightsWithTransfer> findFlightWithTransfer(Airport departureAirport, Airport arrivalAirport){
         List<Flight> setOfDepartureFlights = findFlightFromStart(departureAirport);
         List<Flight> setOfArrivalFlights = findFlightsToEnd(arrivalAirport);
+        List<FlightsWithTransfer> listOfFlightsWithTransfer = new ArrayList<>();
 
         for(Flight flightFrom : setOfDepartureFlights){
             for(Flight flightTo : setOfArrivalFlights){
                 if(flightFrom.getEnd().equals(flightTo.getStart())){
-                    System.out.println("Flight departure: " + departureAirport + ", transfer in: "
-                    + flightFrom.getEnd() + ", arrival in: " + arrivalAirport);
+                    listOfFlightsWithTransfer.add(new FlightsWithTransfer(departureAirport,
+                            flightFrom.getEnd(), arrivalAirport));
                 }
             }
         }
+        return listOfFlightsWithTransfer;
     }
 }
