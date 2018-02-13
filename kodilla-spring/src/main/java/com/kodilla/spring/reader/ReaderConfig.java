@@ -31,7 +31,4 @@ public class ReaderConfig {
         return new Book("The book number two");
     }
 
-
-
-
 }

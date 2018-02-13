@@ -1,21 +1,19 @@
 package com.kodilla.spring.portfolio;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BoardConfig {
-    @Autowired
+    /*@Autowired
     @Qualifier("toDoList")
     TaskList taskList;
-
-    @Bean
+*/
+    /*@Bean
     public Board getBoard(){
         return new Board();
-    }
+    }*/
 
     @Bean(name = "toDoList")
     public TaskList addTaskToToDoList(Board board){
