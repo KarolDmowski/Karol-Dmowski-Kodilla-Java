@@ -1,10 +1,6 @@
 package com.kodilla.spring;
 
-import com.kodilla.spring.Shape.Circle;
 import com.kodilla.spring.Shape.Shape;
-import com.kodilla.spring.Shape.Square;
-import com.kodilla.spring.Shape.Triangle;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,10 +8,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringRunnerTestSuite {
-	@Test
+	/*@Test
 	public void testCircleLoadedIntoContainer(){
 		//Given
 		ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
@@ -44,7 +42,7 @@ public class SpringRunnerTestSuite {
 		String name = shape.getShapeName();
 		//Then
 		Assert.assertEquals("This is a square", name);
-	}
+	}*/
 	@Test
 	public void testShapeLoadedIntoContainer() {
 		//Given
@@ -54,5 +52,17 @@ public class SpringRunnerTestSuite {
 		String name = shape.getShapeName();
 		//Then
 		System.out.println("Choosen shape says: " + name);
+	}
+
+	@Test
+	public void testContext() {
+		//Given
+		ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+		//When & then
+		System.out.println("===== Beans list: ==== >>");
+		Arrays.stream(context.getBeanDefinitionNames())
+				.forEach(System.out::println);
+		System.out.println("<< ===== Beans list ====");
+
 	}
 }
