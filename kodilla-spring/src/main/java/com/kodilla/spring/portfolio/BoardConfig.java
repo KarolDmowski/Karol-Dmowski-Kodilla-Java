@@ -20,7 +20,7 @@ public class BoardConfig {
     @Scope("prototype")
     public TaskList addTaskToToDoList(Board board){
         TaskList toDoList = new TaskList();
-        board.setToDoList(toDoList);
+       // board.setToDoList(toDoList);
         return toDoList;
     }
 
@@ -29,7 +29,7 @@ public class BoardConfig {
     @Conditional(AlwaysTrueCondition.class)
     public TaskList addTaskToDoneList(Board board){
         TaskList doneList = new TaskList();
-        board.setDoneList(doneList);
+        //board.setDoneList(doneList);
         return doneList;
     }
 
@@ -38,7 +38,7 @@ public class BoardConfig {
     @Conditional(AlwaysTrueCondition.class)
     public TaskList addTaskToInProgressList(Board board){
         TaskList inProgressList = new TaskList();
-        board.setInProgressList(inProgressList);
+        //board.setInProgressList(inProgressList);
         return inProgressList;
     }
 

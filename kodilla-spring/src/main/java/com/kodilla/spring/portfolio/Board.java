@@ -6,11 +6,17 @@ import org.springframework.stereotype.Component;
 
 @Component
 public final class Board {
+    @Autowired
+    @Qualifier("toDoList")
     private TaskList toDoList;
+    @Autowired
+    @Qualifier("inProgressList")
     private TaskList inProgressList;
+    @Autowired
+    @Qualifier("doneList")
     private TaskList doneList;
 
-    @Autowired
+    /*@Autowired
     @Qualifier("toDoList")
     public void setToDoList(TaskList toDoList) {
         this.toDoList = toDoList;
@@ -25,7 +31,7 @@ public final class Board {
     @Qualifier("doneList")
     public void setDoneList(TaskList doneList) {
         this.doneList = doneList;
-    }
+    }*/
 
     public TaskList getToDoList() {
         return toDoList;
