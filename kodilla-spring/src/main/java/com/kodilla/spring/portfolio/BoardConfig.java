@@ -1,6 +1,5 @@
 package com.kodilla.spring.portfolio;
 
-import com.kodilla.spring.reader.AlwaysTrueCondition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;

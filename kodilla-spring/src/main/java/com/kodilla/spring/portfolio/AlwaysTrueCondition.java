@@ -1,4 +1,4 @@
-package com.kodilla.spring.reader;
+package com.kodilla.spring.portfolio;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
