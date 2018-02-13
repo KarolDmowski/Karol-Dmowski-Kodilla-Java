@@ -1,6 +1,10 @@
 package com.kodilla.spring;
 
+import com.kodilla.spring.Shape.Circle;
 import com.kodilla.spring.Shape.Shape;
+import com.kodilla.spring.Shape.Square;
+import com.kodilla.spring.Shape.Triangle;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +17,7 @@ import java.util.Arrays;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringRunnerTestSuite {
-	/*@Test
+	@Test
 	public void testCircleLoadedIntoContainer(){
 		//Given
 		ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
@@ -42,7 +46,7 @@ public class SpringRunnerTestSuite {
 		String name = shape.getShapeName();
 		//Then
 		Assert.assertEquals("This is a square", name);
-	}*/
+	}
 	@Test
 	public void testShapeLoadedIntoContainer() {
 		//Given
