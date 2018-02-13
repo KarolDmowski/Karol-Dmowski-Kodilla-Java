@@ -11,6 +11,9 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Board board = context.getBean(Board.class);
+        System.out.println(board.getToDoList().getTasks());
+        System.out.println(board.getInProgressList().getTasks());
+        System.out.println(board.getDoneList().getTasks());
         String doneListTask = "Done task";
         String toDoListTask = "To do Task";
         String inProgressTask = "In progress Task";

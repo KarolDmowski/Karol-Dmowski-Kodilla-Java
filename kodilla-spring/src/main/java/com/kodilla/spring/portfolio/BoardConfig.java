@@ -1,9 +1,7 @@
 package com.kodilla.spring.portfolio;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class BoardConfig {
@@ -17,7 +15,7 @@ public class BoardConfig {
     }*/
 
     @Bean(name = "toDoList")
-    @Scope("prototype")
+    //@Scope("prototype")
     public TaskList addTaskToToDoList(Board board){
         TaskList toDoList = new TaskList();
        // board.setToDoList(toDoList);
@@ -25,8 +23,8 @@ public class BoardConfig {
     }
 
     @Bean(name = "doneList")
-    @Scope("prototype")
-    @Conditional(AlwaysTrueCondition.class)
+    //@Scope("prototype")
+    //@Conditional(AlwaysTrueCondition.class)
     public TaskList addTaskToDoneList(Board board){
         TaskList doneList = new TaskList();
         //board.setDoneList(doneList);
@@ -34,8 +32,8 @@ public class BoardConfig {
     }
 
     @Bean(name = "inProgressList")
-    @Scope("prototype")
-    @Conditional(AlwaysTrueCondition.class)
+    //@Scope("prototype")
+    //@Conditional(AlwaysTrueCondition.class)
     public TaskList addTaskToInProgressList(Board board){
         TaskList inProgressList = new TaskList();
         //board.setInProgressList(inProgressList);
