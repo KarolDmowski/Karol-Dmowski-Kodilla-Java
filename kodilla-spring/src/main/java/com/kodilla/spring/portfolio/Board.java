@@ -16,23 +16,6 @@ public final class Board {
     @Qualifier("doneList")
     private TaskList doneList;
 
-    /*@Autowired
-    @Qualifier("toDoList")
-    public void setToDoList(TaskList toDoList) {
-        this.toDoList = toDoList;
-    }
-    @Autowired
-    @Qualifier("inProgressList")
-    public void setInProgressList(TaskList inProgressList) {
-        this.inProgressList = inProgressList;
-    }
-
-    @Autowired
-    @Qualifier("doneList")
-    public void setDoneList(TaskList doneList) {
-        this.doneList = doneList;
-    }*/
-
     public TaskList getToDoList() {
         return toDoList;
     }

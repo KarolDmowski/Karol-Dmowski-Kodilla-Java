@@ -11,9 +11,6 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Board board = context.getBean(Board.class);
-        System.out.println(board.getToDoList().getTasks());
-        System.out.println(board.getInProgressList().getTasks());
-        System.out.println(board.getDoneList().getTasks());
         String doneListTask = "Done task";
         String toDoListTask = "To do Task";
         String inProgressTask = "In progress Task";
@@ -21,15 +18,15 @@ public class BoardTestSuite {
         board.getToDoList().getTasks().add(toDoListTask);
         board.getInProgressList().getTasks().add(inProgressTask);
         board.getDoneList().getTasks().add(doneListTask);
-        System.out.println(board.getToDoList().getTasks().get(0));
-        System.out.println(board.getInProgressList().getTasks().get(0));
-        System.out.println(board.getDoneList().getTasks().get(0));
+        System.out.println(board.getToDoList().getTasks().get(1));
+        System.out.println(board.getInProgressList().getTasks().get(1));
+        System.out.println(board.getDoneList().getTasks().get(1));
         //Then
         Assert.assertTrue(board.getToDoList().getTasks().contains("To do Task"));
-        Assert.assertEquals("To do Task", board.getToDoList().getTasks().get(0));
+        Assert.assertEquals("To do Task", board.getToDoList().getTasks().get(1));
         Assert.assertTrue(board.getInProgressList().getTasks().contains("In progress Task"));
-        Assert.assertEquals("In progress Task", board.getInProgressList().getTasks().get(0));
+        Assert.assertEquals("In progress Task", board.getInProgressList().getTasks().get(1));
         Assert.assertTrue(board.getDoneList().getTasks().contains("Done task"));
-        Assert.assertEquals("Done task", board.getDoneList().getTasks().get(0));
+        Assert.assertEquals("Done task", board.getDoneList().getTasks().get(1));
     }
 }
