@@ -3,9 +3,9 @@ package com.kodilla.patterns.prototype;
 import java.util.HashSet;
 import java.util.Set;
 
-public final class Board {
-    final String name;
-    final Set<TasksList> lists = new HashSet<>();
+public final class Board extends Prototype {
+    String name;
+    Set<TasksList> lists = new HashSet<>();
 
     public Board(String name) {
         this.name = name;
@@ -13,6 +13,10 @@ public final class Board {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Set<TasksList> getLists() {
@@ -26,5 +30,22 @@ public final class Board {
             s = s + list.toString() + "\n";
         }
         return s;
+    }
+
+    public Board shallowCopy() throws CloneNotSupportedException {
+        return (Board)super.clone();
+    }
+
+    public Board deepCopy() throws CloneNotSupportedException {
+        Board cloneBoard = (Board)super.clone();
+        cloneBoard.lists = new HashSet<>();
+        for(TasksList theList : lists) {
+            TasksList cloneList = new TasksList(theList.getName());
+            for(Task task : theList.getTasks()) {
+                cloneList.getTasks().add(task);
+            }
+            cloneBoard.getLists().add(cloneList);
+        }
+        return cloneBoard;
     }
 }
