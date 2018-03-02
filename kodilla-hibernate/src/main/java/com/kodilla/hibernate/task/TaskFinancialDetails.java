@@ -1,21 +1,51 @@
 package com.kodilla.hibernate.task;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "TASK_FINACIALS")
+@Table(name = "TASKS_FINANCIALS")
 public class TaskFinancialDetails {
     private int id;
     private BigDecimal price;
-    private boolean pasi;
+    private boolean paid;
 
     public TaskFinancialDetails(){
     }
 
     public TaskFinancialDetails(BigDecimal price, boolean pasi) {
         this.price = price;
-        this.pasi = pasi;
+        this.paid = pasi;
+    }
+
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ID", unique = true)
+    public int getId() {
+        return id;
+    }
+
+    @Column(name = "PRICE")
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    @Column(name = "PAID")
+    public boolean isPaid() {
+        return paid;
+    }
+
+    private void setId(int id) {
+        this.id = id;
+    }
+
+    private void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    private void setPaid(boolean paid) {
+        this.paid = paid;
     }
 }
