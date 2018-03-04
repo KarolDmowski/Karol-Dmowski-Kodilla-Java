@@ -57,7 +57,6 @@ public class InvoiceDaoTestSuite {
         try {
             invoiceDao.delete(invoiceId);
             productDao.delete(prod1Id);
-            System.out.println(prod1Id);
             productDao.delete(prod2Id);
             itemDao.delete(item1Id);
             itemDao.delete(item2Id);
